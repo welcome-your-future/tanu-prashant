@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Valentine 💖</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: white;
+            font-size: 40px;
+        }
+
+        .buttons {
+            margin-top: 60px;
+        }
+
+        button {
+            display: block;
+            width: 250px;
+            padding: 15px;
+            margin: 15px auto;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: white;
+            color: #ff4b5c;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4b5c;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        #message {
+            margin-top: 40px;
+            font-size: 22px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Valentine’s Day 💕</h1>
+
+  <div class="buttons">
+    <a href="https://digibouquet.vercel.app/bouquet/b23a3b3e-f20b-40fd-96ca-0a8cf4f089d6"><button>This is for my Tanu 💖</button></a>
+    <a href="https://littlevoicenote.com/m/8dd1816b"><button>This is for my Pillu 💕</button></a>
+    <a href="moments.html"><button>This is for my Tanay 💘</button></a>
+    <a href="message.html"><button>Special Surprise 🎁</button></a>
+
+</div>
+
+
+    <div id="message"></div>
+
+    <script>
+        function showMessage(name) {
+            let message = "";
+
+            if (name === "Tanu") {
+                message = "Tanu, you are my heartbeat and my forever love 💖";
+            } else if (name === "Pillu") {
+                message = "Pillu, you make my life beautiful every single day 💕";
+            } else if (name === "Tanay") {
+                message = "Tanay, you are my strength and my happiness 💘";
+            } else if (name === "Special") {
+                message = "You are the most special person in my world 💝";
+            } else if (name === "Forever") {
+                message = "No matter what happens, I will always choose you ❤️";
+            }
+
+            document.getElementById("message").innerText = message;
+        }
+    </script>
+  <script src="script.js"></script>
+</body>
+</html>
