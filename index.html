@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Happy Birthday</title>
   <style>
     * {
@@ -11,6 +13,19 @@
       padding: 0;
       box-sizing: border-box;
     }
+body {
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  background-image: url('p/1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
     body {
       margin: 0;
@@ -154,6 +169,38 @@
         font-size: 1rem;
       }
     }
+    @media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-attachment: scroll; /* Fix mobile background bug */
+  }
+
+  .next-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .popup-content p {
+    font-size: 0.95rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -193,5 +240,30 @@
       }
     });
   </script>
+  <script>
+  function checkOrientation() {
+    const popup = document.getElementById('mobilePopup');
+    const body = document.body;
+
+    if (window.innerHeight > window.innerWidth) {
+      popup.classList.add('show');
+      body.classList.add('popup-active');
+    } else {
+      popup.classList.remove('show');
+      body.classList.remove('popup-active');
+    }
+  }
+
+  window.addEventListener('load', checkOrientation);
+  window.addEventListener('resize', checkOrientation);
+
+  function closeMobilePopup() {
+    const popup = document.getElementById('mobilePopup');
+    const body = document.body;
+    popup.classList.remove('show');
+    body.classList.remove('popup-active');
+  }
+</script>
+
 </body>
 </html>
